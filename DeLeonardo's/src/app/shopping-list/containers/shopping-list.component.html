@@ -1,0 +1,34 @@
+<div class="white px-4 section-header">
+  <h3>Shopping list</h3>
+  <p class="grey-text pt-3">Manage your shopping list</p>
+</div>
+
+<div class="container-fluid pt-5 pb-5">
+  <div class="pt-3 pb-5">
+    <button mdbBtn color="primary" (click)="onAddShoppingListItem()">
+      Add new Item
+    </button>
+
+    <div *ngIf="shoppingList" class="mt-4 white">
+      <app-shopping-list-list
+        [shoppingList]="shoppingList"
+        (shoppingListItemEdited)="onShoppingListItemEdit($event)"
+        (shoppingListItemDeleted)="onShoppingListItemDelete($event)"
+      ></app-shopping-list-list>
+    </div>
+
+    <div
+      *ngIf="isLoading$ | async"
+      class="d-flex justify-content-center align-items-center"
+      style="margin-top: 200px"
+    >
+      <div
+        class="spinner-grow text-primary"
+        role="status"
+        style="width: 4rem; height: 4rem;"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

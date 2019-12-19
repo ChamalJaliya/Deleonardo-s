@@ -1,0 +1,87 @@
+<mdb-card>
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Contact us</strong>
+    </h5>
+  </mdb-card-header>
+  <br />
+  <mdb-card-body class="px-lg-5 pt-0">
+    <form
+      class="text-center"
+      style="color: #757575;"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="md-form mt-3">
+        <input
+          type="text"
+          formControlName="contactFormName"
+          id="materialContactFormName"
+          class="form-control"
+          mdbInput
+        />
+        <label for="materialContactFormName">Name</label>
+      </div>
+
+      <div class="md-form">
+        <input
+          type="email"
+          formControlName="contactFormEmail"
+          id="materialContactFormEmail"
+          class="form-control"
+          mdbInput
+        />
+        <label for="materialContactFormEmail">E-mail</label>
+      </div>
+
+      <span>Subject</span>
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <select
+            formControlName="contactFormSubjects"
+            class="browser-default custom-select mb-4"
+          >
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Feedback</option>
+            <option value="2">Report a bug</option>
+            <option value="3">Feature request</option>
+            <option value="4">Feature request</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="md-form">
+        <textarea
+          type="text"
+          formControlName="contactFormMessage"
+          id="materialContactFormMessage"
+          class="form-control md-textarea"
+          mdbInput
+        ></textarea>
+        <label for="materialContactFormMessage">Message</label>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+          <mdb-checkbox formControlName="contactFormCopy"
+            >Send me a copy of this message</mdb-checkbox
+          >
+        </div>
+      </div>
+
+      <button
+        mdbBtn
+        color="info"
+        outline="true"
+        rounded="true"
+        block="true"
+        class="z-depth-0 my-4 waves-effect"
+        mdbWavesEffect
+        type="submit"
+        [disabled]="disabledSubmitButton"
+      >
+        Send
+      </button>
+    </form>
+  </mdb-card-body>
+</mdb-card>

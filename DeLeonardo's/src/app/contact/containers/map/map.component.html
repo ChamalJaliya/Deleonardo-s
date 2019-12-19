@@ -1,0 +1,15 @@
+<agm-map [latitude]="latitude" [longitude]="longitude" style="height: 575px">
+  <agm-marker
+    (mouseOver)="window.open()"
+    (mouseOut)="window.close()"
+    *ngFor="let marker of markers"
+    [latitude]="marker.latitude"
+    [longitude]="marker.longitude"
+  >
+    <agm-info-window #window>
+      <h6>
+        <img src="../../../../assets/resources/baker.png" /> De'Leonardo's
+      </h6>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

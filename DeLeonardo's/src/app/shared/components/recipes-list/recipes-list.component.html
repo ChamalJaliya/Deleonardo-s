@@ -1,0 +1,10 @@
+<div class="recipes-list d-flex flex-wrap fadeIn animated">
+  <div class="recipe" *ngFor="let recipe of recipes; trackBy: trackByFunction">
+    <app-recipe
+      [recipe]="recipe"
+      [editable]="editable"
+      (deleted)="onRecipeDelete($event)"
+      (edited)="onRecipeEdit($event)"
+    ></app-recipe>
+  </div>
+</div>

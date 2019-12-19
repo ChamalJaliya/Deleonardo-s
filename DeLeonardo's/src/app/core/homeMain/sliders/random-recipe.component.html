@@ -1,0 +1,58 @@
+<!-- slider random recipe display -->
+
+<div class="container">
+  <div class="row row-eq-height" style="justify-content: center;">
+    <!--Section: Magazine v.2-->
+    <section class="magazine-section my-5">
+      <!-- Section heading -->
+      <h3
+        style="color:#222f3e"
+        class="h2-responsive font-weight-bold text-center my-5"
+      >
+        Random Recipe
+      </h3>
+      <!-- Section description -->
+      <p class="text-center dark-grey-text w-responsive mx-auto mb-5">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit id laborum.
+      </p>
+
+      <mdb-carousel
+        [isControls]="true"
+        class="carousel slide"
+        [animation]="'slide'"
+      >
+        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+          <div
+            class="col-md-4"
+            [ngClass]="{ 'd-none d-md-block': cardIndex !== 0 }"
+            *ngFor="let card of item; let cardIndex = index"
+          >
+            <mdb-card class="my-1">
+              <mdb-card-img
+                [src]="card.img"
+                alt="Card image cap"
+              ></mdb-card-img>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>{{ card.title }}</h4>
+                </mdb-card-title>
+                <p>{{ card.description }}</p>
+                <a
+                  href="#"
+                  mdbBtn
+                  color="primary"
+                  class="waves-light"
+                  mdbWavesEffect
+                  >{{ card.buttonText }}</a
+                >
+              </mdb-card-body>
+            </mdb-card>
+          </div>
+        </mdb-carousel-item>
+      </mdb-carousel>
+    </section>
+    <!--Section: Magazine v.2-->
+  </div>
+</div>

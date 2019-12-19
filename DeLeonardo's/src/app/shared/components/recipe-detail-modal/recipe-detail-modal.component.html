@@ -1,0 +1,73 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+    <h4 class="modal-title w-100" id="myModalLabel">{{ recipe.name }}</h4>
+  </div>
+  <div class="modal-body">
+    <mdb-card>
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <mdb-card-img
+          [src]="recipe.imagePath"
+          alt="{{ recipe.name }}"
+          class=" massive image"
+          style="max-height: 300px;"
+        ></mdb-card-img>
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+      <!--Card content-->
+      <mdb-card-body style="align-content: center;">
+        <!--Title-->
+        <mdb-card-title>
+          <h4>{{ recipe.name }}</h4>
+        </mdb-card-title>
+
+        <!--Text-->
+        <mdb-card-text>
+          {{ recipe.description }}
+        </mdb-card-text>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let ingredient of recipe.ingredients"
+          >
+            {{ ingredient.name }} - {{ ingredient.amount }}
+          </li>
+        </ul>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      mdbBtn
+      color="secondary"
+      class="waves-light"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+      mdbWavesEffect
+    >
+      ORDER NOW
+    </button>
+    <button
+      type="button"
+      mdbBtn
+      color="primary"
+      class="relative waves-light"
+      mdbWavesEffect
+      (click)="modalRef.hide()"
+    >
+      <mdb-icon fas icon="shopping-cart mr-2"></mdb-icon>
+      ADD TO CART
+    </button>
+  </div>
+</div>
