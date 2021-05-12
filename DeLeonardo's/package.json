@@ -30,7 +30,7 @@
     "@types/md5": "^2.1.33",
     "angular-bootstrap-md": "8.0.0",
     "body-parser": "^1.19.0",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "firebase": "^6.2.2",
